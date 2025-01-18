@@ -314,7 +314,7 @@ def get_predict_function(
                         proxies=proxies,
                         json=playload,
                         stream=True,
-                        timeout=TIMEOUT_SECONDS,
+                        timeout=(TIMEOUT_SECONDS, TIMEOUT_SECONDS),
                     )
                 else:
                     response = requests.post(
@@ -322,7 +322,7 @@ def get_predict_function(
                         headers=headers,
                         json=playload,
                         stream=True,
-                        timeout=TIMEOUT_SECONDS,
+                        timeout=(TIMEOUT_SECONDS, TIMEOUT_SECONDS),
                     )
                 break
             except:
